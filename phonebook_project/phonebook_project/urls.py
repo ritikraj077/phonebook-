@@ -20,3 +20,13 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('add/', views.add_record, name='add_record'),
+    path('list/', views.list_records, name='list_records'),
+    path('edit/<int:pk>/', views.edit_record, name='edit_record'),
+    path('delete/<int:pk>/', views.delete_record, name='delete_record'),
+    path('search/', views.search_record, name='search_record'),
+]
